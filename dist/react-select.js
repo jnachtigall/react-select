@@ -2041,6 +2041,7 @@ var propTypes = {
 	children: PropTypes.func.isRequired, // Child function responsible for creating the inner Select component; (props: Object): PropTypes.element
 	ignoreAccents: PropTypes.bool, // strip diacritics when filtering; defaults to true
 	ignoreCase: PropTypes.bool, // perform case-insensitive filtering; defaults to true
+	keepMenuOpenWhileLoading: PropTypes.bool, // keep dropdown open while waiting for loadOptions; defaults to false
 	loadOptions: PropTypes.func.isRequired, // callback to load options asynchronously; (inputValue: string, callback: Function): ?Promise
 	loadingPlaceholder: PropTypes.oneOfType([// replaces the placeholder while options are loading
 	PropTypes.string, PropTypes.node]),
@@ -2069,6 +2070,7 @@ var defaultProps = {
 	children: defaultChildren,
 	ignoreAccents: true,
 	ignoreCase: true,
+	keepMenuOpenWhileLoading: false,
 	loadingPlaceholder: 'Loading...',
 	options: [],
 	searchPromptText: 'Type to search'
@@ -2167,7 +2169,7 @@ var Async = function (_Component) {
 				});
 			}
 
-			if (this._callback && !this.state.isLoading) {
+			if (this._callback && !this.props.keepMenuOpenWhileLoading && !this.state.isLoading) {
 				this.setState({
 					isLoading: true
 				});
