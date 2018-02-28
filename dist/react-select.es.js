@@ -1577,8 +1577,8 @@ var Select$1 = function (_React$Component) {
 				'aria-expanded': '' + isOpen,
 				'aria-haspopup': '' + isOpen,
 				'aria-label': this.props['aria-label'],
-				'aria-labelledby': this.props['aria-labelledby'],
-				'aria-owns': ariaOwns,
+				'aria-labelledby': this.props['aria-labelledby']
+			}, ariaOwns ? { 'aria-owns': ariaOwns } : {}, {
 				className: className,
 				onBlur: this.handleInputBlur,
 				onChange: this.handleInputChange,
@@ -1602,8 +1602,8 @@ var Select$1 = function (_React$Component) {
 
 				var _ariaOwns = classNames(defineProperty({}, this._instancePrefix + '-list', isOpen));
 				return React.createElement('div', _extends({}, divProps, {
-					'aria-expanded': isOpen,
-					'aria-owns': _ariaOwns,
+					'aria-expanded': isOpen
+				}, _ariaOwns ? { 'aria-owns': _ariaOwns } : {}, {
 					'aria-activedescendant': isOpen ? this._instancePrefix + '-option-' + focusedOptionIndex : this._instancePrefix + '-value',
 					'aria-disabled': '' + this.props.disabled,
 					'aria-label': this.props['aria-label'],
