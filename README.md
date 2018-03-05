@@ -113,7 +113,7 @@ Note: the `clearable` prop of the Select component should also be set to `false`
 
 #### Accessibility Note
 
-Selected values aren't focus targets, which means keyboard users can't tab to them, and are restricted to removing them using backspace in order. This isn't ideal and I'm looking at other options for the future; in the meantime if you want to use a custom `valueComponent` that implements tabIndex and keyboard event handling, see #2098 for an example.
+Selected values aren't focus targets, which means keyboard users can't tab to them, and are restricted to removing them using backspace in order. This isn't ideal and I'm looking at other options for the future; in the meantime if you want to use a custom `valueComponent` that implements tabIndex and keyboard event handling, see [#2098](https://github.com/JedWatson/react-select/pull/2098) for an example.
 
 ### Async options
 
