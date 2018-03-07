@@ -2436,8 +2436,8 @@ var CreatableSelect = function (_React$Component) {
 			var _this2 = this;
 
 			var _props4 = this.props,
-			    refProp = _props4.ref,
-			    restProps = objectWithoutProperties(_props4, ['ref']);
+			    refProp = _props4.innerRef,
+			    restProps = objectWithoutProperties(_props4, ['innerRef']);
 			var children = this.props.children;
 
 			// We can't use destructuring default values to set the children,
@@ -2555,6 +2555,8 @@ CreatableSelect.propTypes = {
 	// See Select.propTypes.filterOptions
 	filterOptions: PropTypes.any,
 
+	innerRef: PropTypes.func,
+
 	// Searches for any matching option within the set of options.
 	// This function prevents duplicate options from being created.
 	// ({ option: Object, options: Array, labelKey: string, valueKey: string }): boolean
@@ -2586,8 +2588,6 @@ CreatableSelect.propTypes = {
 	// Creates prompt/placeholder option text.
 	// (filterText: string): string
 	promptTextCreator: PropTypes.func,
-
-	ref: PropTypes.func,
 
 	// Decides if a keyDown event (eg its `keyCode`) should result in the creation of a new option.
 	shouldKeyDownEventCreateNewOption: PropTypes.func
