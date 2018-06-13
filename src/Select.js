@@ -1159,6 +1159,8 @@ class Select extends React.Component {
 			);
 		}
 
+		const hasValues = typeof valueArray != 'undefined' && valueArray != null && valueArray.length != null && valueArray.length > 0;
+
 		return (
 			<div ref={ref => this.wrapper = ref}
 				 className={className}
@@ -1173,7 +1175,7 @@ class Select extends React.Component {
 					onTouchStart={this.handleTouchStart}
 					style={this.props.style}
 				>
-					<span className="Select-multi-value-wrapper" id={`${this._instancePrefix}-value`}>
+					<span className="Select-multi-value-wrapper" {...(hasValues ? {'role': 'listbox'} : {})} id={`${this._instancePrefix}-value`}>
 						{this.renderValue(valueArray, isOpen)}
 						{this.renderInput(valueArray, focusedOptionIndex)}
 					</span>
