@@ -1871,6 +1871,8 @@ var Select$1 = function (_React$Component) {
 				);
 			}
 
+			var hasValues = typeof valueArray != 'undefined' && valueArray != null && valueArray.length != null && valueArray.length > 0;
+
 			return React__default.createElement(
 				'div',
 				{ ref: function ref(_ref7) {
@@ -1894,7 +1896,7 @@ var Select$1 = function (_React$Component) {
 					},
 					React__default.createElement(
 						'span',
-						{ className: 'Select-multi-value-wrapper', id: this._instancePrefix + '-value' },
+						_extends({ className: 'Select-multi-value-wrapper' }, hasValues ? { 'role': 'listbox' } : {}, { id: this._instancePrefix + '-value' }),
 						this.renderValue(valueArray, isOpen),
 						this.renderInput(valueArray, focusedOptionIndex)
 					),
