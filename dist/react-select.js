@@ -1513,7 +1513,7 @@ var Select$1 = function (_React$Component) {
 			var renderLabel = this.props.valueRenderer || this.getOptionLabel;
 			var ValueComponent = this.props.valueComponent;
 			if (!valueArray.length) {
-				var showPlaceholder = shouldShowPlaceholder(this.state, this.props, isOpen);
+				var showPlaceholder = this.props.placeholder && shouldShowPlaceholder(this.state, this.props, isOpen);
 				return showPlaceholder ? React__default.createElement(
 					'div',
 					{ className: 'Select-placeholder' },
