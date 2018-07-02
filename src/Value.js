@@ -57,7 +57,7 @@ class Value extends React.Component {
 		if (this.props.disabled || !this.props.onRemove) return;
 		return (
 			<span className="Select-value-icon"
-				aria-hidden="true"
+				aria-label={this.props.valueCloseAriaLabel}
 				onMouseDown={this.onRemove}
 				onTouchEnd={this.handleTouchEndRemove}
 				onTouchStart={this.handleTouchStart}
@@ -100,6 +100,7 @@ Value.propTypes = {
 	onClick: PropTypes.func,                // method to handle click on value label
 	onRemove: PropTypes.func,               // method to handle removal of the value
 	value: PropTypes.object.isRequired,     // the option object for this value
+	valueCloseAriaLabel: PropTypes.string,  // Aria label for close value - used for aria
 };
 
 export default Value;
