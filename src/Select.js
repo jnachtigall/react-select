@@ -828,6 +828,7 @@ class Select extends React.Component {
 						placeholder={this.props.placeholder}
 						value={value}
 						valueCloseAriaLabel={this.props.valueCloseAriaLabel}
+						valueAriaLabel={this.props.valueAriaLabel}
 					>
 						{renderLabel(value, i)}
 						<span className="Select-aria-only">&nbsp;</span>
@@ -1269,6 +1270,7 @@ Select.propTypes = {
 	valueRenderer: PropTypes.func,        // valueRenderer: function (option) {}
 	wrapperStyle: PropTypes.object,       // optional style to apply to the component wrapper
 	valueCloseAriaLabel: PropTypes.string,  // Aria label for close value - used for aria
+	valueAriaLabel: PropTypes.string, 		 // Aria label for value - used for aria
 };
 
 Select.defaultProps = {

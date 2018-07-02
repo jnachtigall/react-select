@@ -611,7 +611,7 @@ var Value = function (_React$Component) {
 				this.props.children
 			) : React__default.createElement(
 				'span',
-				{ className: className, role: 'option', 'aria-selected': 'true', id: this.props.id },
+				{ className: className, role: 'option', 'aria-label': this.props.valueAriaLabel, 'aria-selected': 'true', id: this.props.id },
 				this.props.children
 			);
 		}
@@ -639,7 +639,8 @@ Value.propTypes = {
 	onClick: PropTypes.func, // method to handle click on value label
 	onRemove: PropTypes.func, // method to handle removal of the value
 	value: PropTypes.object.isRequired, // the option object for this value
-	valueCloseAriaLabel: PropTypes.string // Aria label for close value - used for aria
+	valueCloseAriaLabel: PropTypes.string, // Aria label for close value - used for aria
+	valueAriaLabel: PropTypes.string // Aria label for value - used for aria
 };
 
 /*!
@@ -1535,7 +1536,8 @@ var Select$1 = function (_React$Component) {
 							onRemove: _this5.removeValue,
 							placeholder: _this5.props.placeholder,
 							value: value,
-							valueCloseAriaLabel: _this5.props.valueCloseAriaLabel
+							valueCloseAriaLabel: _this5.props.valueCloseAriaLabel,
+							valueAriaLabel: _this5.props.valueAriaLabel
 						},
 						renderLabel(value, i),
 						React__default.createElement(
@@ -1991,7 +1993,8 @@ Select$1.propTypes = {
 	valueKey: PropTypes.string, // path of the label value in option objects
 	valueRenderer: PropTypes.func, // valueRenderer: function (option) {}
 	wrapperStyle: PropTypes.object, // optional style to apply to the component wrapper
-	valueCloseAriaLabel: PropTypes.string // Aria label for close value - used for aria
+	valueCloseAriaLabel: PropTypes.string, // Aria label for close value - used for aria
+	valueAriaLabel: PropTypes.string // Aria label for value - used for aria
 };
 
 Select$1.defaultProps = {
