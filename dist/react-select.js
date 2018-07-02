@@ -593,7 +593,7 @@ var Value = function (_React$Component) {
 			return React__default.createElement(
 				'span',
 				{ className: 'Select-value-icon',
-					'aria-hidden': 'true',
+					'aria-label': this.props.valueCloseAriaLabel,
 					onMouseDown: this.onRemove,
 					onTouchEnd: this.handleTouchEndRemove,
 					onTouchStart: this.handleTouchStart,
@@ -638,7 +638,8 @@ Value.propTypes = {
 	id: PropTypes.string, // Unique id for the value - used for aria
 	onClick: PropTypes.func, // method to handle click on value label
 	onRemove: PropTypes.func, // method to handle removal of the value
-	value: PropTypes.object.isRequired // the option object for this value
+	value: PropTypes.object.isRequired, // the option object for this value
+	valueCloseAriaLabel: PropTypes.string // Aria label for close value - used for aria
 };
 
 /*!
@@ -1533,7 +1534,8 @@ var Select$1 = function (_React$Component) {
 							onClick: onClick,
 							onRemove: _this5.removeValue,
 							placeholder: _this5.props.placeholder,
-							value: value
+							value: value,
+							valueCloseAriaLabel: _this5.props.valueCloseAriaLabel
 						},
 						renderLabel(value, i),
 						React__default.createElement(
@@ -1988,7 +1990,8 @@ Select$1.propTypes = {
 	valueComponent: PropTypes.func, // value component to render
 	valueKey: PropTypes.string, // path of the label value in option objects
 	valueRenderer: PropTypes.func, // valueRenderer: function (option) {}
-	wrapperStyle: PropTypes.object // optional style to apply to the component wrapper
+	wrapperStyle: PropTypes.object, // optional style to apply to the component wrapper
+	valueCloseAriaLabel: PropTypes.string // Aria label for close value - used for aria
 };
 
 Select$1.defaultProps = {
@@ -2034,7 +2037,8 @@ Select$1.defaultProps = {
 	tabSelectsValue: true,
 	trimFilter: true,
 	valueComponent: Value,
-	valueKey: 'value'
+	valueKey: 'value',
+	valueCloseAriaLabel: 'Close'
 };
 
 var propTypes = {
