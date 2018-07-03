@@ -606,7 +606,7 @@ var Value = function (_React$Component) {
 				this.props.children
 			) : React.createElement(
 				'span',
-				{ className: className, role: 'option', 'aria-label': this.props.valueAriaLabel, 'aria-selected': 'true', id: this.props.id },
+				{ className: className, role: 'option', 'aria-label': this.props.valueAriaLabel + ' ' + this.props.value.label, 'aria-selected': 'true', id: this.props.id },
 				this.props.children
 			);
 		}
@@ -634,8 +634,8 @@ Value.propTypes = {
 	onClick: PropTypes.func, // method to handle click on value label
 	onRemove: PropTypes.func, // method to handle removal of the value
 	value: PropTypes.object.isRequired, // the option object for this value
-	valueCloseAriaLabel: PropTypes.string, // Aria label for close value - used for aria
-	valueAriaLabel: PropTypes.string // Aria label for value - used for aria
+	valueAriaLabel: PropTypes.string, // Aria label for value - used for aria
+	valueCloseAriaLabel: PropTypes.string // Aria label for close value - used for aria
 };
 
 /*!
@@ -2036,7 +2036,8 @@ Select$1.defaultProps = {
 	trimFilter: true,
 	valueComponent: Value,
 	valueKey: 'value',
-	valueCloseAriaLabel: 'Close'
+	valueCloseAriaLabel: 'Close',
+	valueAriaLabel: 'Used filter: '
 };
 
 var propTypes = {

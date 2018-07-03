@@ -1318,6 +1318,7 @@ Select.defaultProps = {
 	valueComponent: Value,
 	valueKey: 'value',
 	valueCloseAriaLabel: 'Close',
+	valueAriaLabel: 'Used filter: ',
 };
 
 export default Select;

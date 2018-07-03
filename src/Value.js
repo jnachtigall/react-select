@@ -74,7 +74,7 @@ class Value extends React.Component {
 				{this.props.children}
 			</a>
 		) : (
-			<span className={className} role="option" aria-label={this.props.valueAriaLabel} aria-selected="true" id={this.props.id}>
+			<span className={className} role="option" aria-label={this.props.valueAriaLabel + ' ' + this.props.value.label} aria-selected="true" id={this.props.id}>
 				{this.props.children}
 			</span>
 		);
@@ -100,8 +100,8 @@ Value.propTypes = {
 	onClick: PropTypes.func,                // method to handle click on value label
 	onRemove: PropTypes.func,               // method to handle removal of the value
 	value: PropTypes.object.isRequired,     // the option object for this value
-	valueCloseAriaLabel: PropTypes.string,  // Aria label for close value - used for aria
 	valueAriaLabel: PropTypes.string,  			// Aria label for value - used for aria
+	valueCloseAriaLabel: PropTypes.string,  // Aria label for close value - used for aria
 };
 
 export default Value;
