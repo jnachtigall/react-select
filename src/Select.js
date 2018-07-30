@@ -465,7 +465,7 @@ class Select extends React.Component {
 
 		if (typeof this.props.onInputKeyDown === 'function') {
 			this.props.onInputKeyDown(event);
-			if (event.defaultPrevented) {
+			if (event.defaultPrevented && event.initAgDefaultPrevented) {
 				return;
 			}
 		}
