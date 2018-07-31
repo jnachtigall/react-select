@@ -1107,7 +1107,9 @@ var Select$1 = function (_React$Component) {
 
 			if (typeof this.props.onInputKeyDown === 'function') {
 				this.props.onInputKeyDown(event);
-				if (event.defaultPrevented && event.initAgDefaultPrevented) {
+				// Workaround for IE11 bug
+				// See https://stackoverflow.com/questions/23349191/event-preventdefault-is-not-working-in-ie-11-for-custom-events
+				if (event.defaultPrevented && event.__bpaDefaultPrevented) {
 					return;
 				}
 			}
