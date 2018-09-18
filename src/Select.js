@@ -625,13 +625,11 @@ class Select extends React.Component {
 				inputValue: this.handleInputValueChange(updatedValue),
 				isOpen: !this.props.closeOnSelect,
 			}, () => {
-				// Alsways add, do not remove value
-				// const valueArray = this.getValueArray(this.props.value);
-				// if (valueArray.some(i => i[this.props.valueKey] === value[this.props.valueKey])) {
-				// 	this.removeValue(value);
-				// } else {
+				// Only add if not already added, do not remove value
+				const valueArray = this.getValueArray(this.props.value);
+				if (!valueArray.some(i => i[this.props.valueKey] === value[this.props.valueKey])) {
 					this.addValue(value);
-				// }
+				}
 			});
 		} else {
 			this.setState({
