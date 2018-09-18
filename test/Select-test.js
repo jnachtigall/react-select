@@ -2333,25 +2333,25 @@ describe('Select', () => {
 			]);
 		});
 
-		it('removes a selected value if chosen again', () => {
+	// 	it('removes a selected value if chosen again', () => {
 
-			clickArrowToOpen();
+	// 		clickArrowToOpen();
 
-			var items = ReactDOM.findDOMNode(instance).querySelectorAll('.Select-option');
+	// 		var items = ReactDOM.findDOMNode(instance).querySelectorAll('.Select-option');
 
-			// Click the option "Two" to select it
-			TestUtils.Simulate.mouseDown(items[1]);
-			expect(onChange, 'was called times', 1);
+	// 		// Click the option "Two" to select it
+	// 		TestUtils.Simulate.mouseDown(items[1]);
+	// 		expect(onChange, 'was called times', 1);
 
-			// Click the option "Two" again to deselect it
-			TestUtils.Simulate.mouseDown(items[1]);
-			expect(onChange, 'was called times', 2);
+	// 		// Click the option "Two" again to deselect it
+	// 		TestUtils.Simulate.mouseDown(items[1]);
+	// 		expect(onChange, 'was called times', 2);
 
-			expect(onChange.args, 'to equal', [
-				[[{ value: 'two', label: 'Two' }]],
-				[[]],
-			]);
-		});
+	// 		expect(onChange.args, 'to equal', [
+	// 			[[{ value: 'two', label: 'Two' }]],
+	// 			[[]],
+	// 		]);
+	// 	});
 	});
 
 	describe('with props', () => {

@@ -1295,14 +1295,13 @@ var Select$1 = function (_React$Component) {
 					inputValue: this.handleInputValueChange(updatedValue),
 					isOpen: !this.props.closeOnSelect
 				}, function () {
-					var valueArray = _this3.getValueArray(_this3.props.value);
-					if (valueArray.some(function (i) {
-						return i[_this3.props.valueKey] === value[_this3.props.valueKey];
-					})) {
-						_this3.removeValue(value);
-					} else {
-						_this3.addValue(value);
-					}
+					// Alsways add, do not remove value
+					// const valueArray = this.getValueArray(this.props.value);
+					// if (valueArray.some(i => i[this.props.valueKey] === value[this.props.valueKey])) {
+					// 	this.removeValue(value);
+					// } else {
+					_this3.addValue(value);
+					// }
 				});
 			} else {
 				this.setState({
