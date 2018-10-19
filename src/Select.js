@@ -1033,6 +1033,7 @@ class Select extends React.Component {
 				selectValue: this.selectValue,
 				valueArray,
 				valueKey: this.props.valueKey,
+				optionAriaLabel: this.props.optionAriaLabel,
 			});
 		} else if (this.props.noResultsText) {
 			return (
@@ -1272,6 +1273,7 @@ Select.propTypes = {
 	wrapperStyle: PropTypes.object,       // optional style to apply to the component wrapper
 	valueCloseAriaLabel: PropTypes.string,  // Aria label for close value - used for aria
 	valueAriaLabel: PropTypes.string, 		 // Aria label for value - used for aria
+	optionAriaLabel: PropTypes.string,
 };
 
 Select.defaultProps = {
@@ -1320,6 +1322,7 @@ Select.defaultProps = {
 	valueKey: 'value',
 	valueCloseAriaLabel: 'Close',
 	valueAriaLabel: 'Used filter: ',
+	optionAriaLabel: 'Search for {label}',
 };
 
 export default Select;

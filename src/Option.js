@@ -56,7 +56,7 @@ class Option extends React.Component {
 	}
 
 	render () {
-		const { option, instancePrefix, optionIndex } = this.props;
+		const { option, instancePrefix, optionIndex, optionAriaLabel } = this.props;
 		const className = classNames(this.props.className, option.className);
 
 		return option.disabled ? (
@@ -69,7 +69,7 @@ class Option extends React.Component {
 			<div className={className}
 				style={option.style}
 				role="option"
-				aria-label={option.label}
+				aria-label={optionAriaLabel.replace('{label}', option.label)}
 				onMouseDown={this.handleMouseDown}
 				onMouseEnter={this.handleMouseEnter}
 				onMouseMove={this.handleMouseMove}
@@ -96,6 +96,7 @@ Option.propTypes = {
 	onUnfocus: PropTypes.func,               // method to handle mouseLeave on option element
 	option: PropTypes.object.isRequired,     // object that is base for that option
 	optionIndex: PropTypes.number,           // index of the option, used to generate unique ids for aria
+	optionAriaLabel: PropTypes.string,
 };
 
 export default Option;

@@ -18,6 +18,7 @@ const menuRenderer = ({
 	selectValue,
 	valueArray,
 	valueKey,
+	optionAriaLabel
 }) => {
 	let Option = optionComponent;
 
@@ -48,6 +49,7 @@ const menuRenderer = ({
 				ref={ref => { onOptionRef(ref, isFocused); }}
 				removeValue={removeValue}
 				selectValue={selectValue}
+				optionAriaLabel={optionAriaLabel}
 			>
 				{optionRenderer(option, i, inputValue)}
 			</Option>

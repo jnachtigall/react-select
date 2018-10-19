@@ -70,6 +70,13 @@ var StatesField = createClass({
 					onChange={this.updateValue}
 					rtl={this.state.rtl}
 					searchable={this.state.searchable}
+		optionAriaLabel="Nach {label} suchen"
+	          onBlur={ev => {
+							// Enable this if you want to style the dropdown menu
+							// See https://github.com/JedWatson/react-select/issues/1487
+							// eslint-disable-next-line no-debugger
+							// debugger;
+						}}
 				/>
 				<button style={{ marginTop: '15px' }} type="button" onClick={this.focusStateSelect}>Focus Select</button>
 				<button style={{ marginTop: '15px' }} type="button" onClick={this.clearValue}>Clear Value</button>

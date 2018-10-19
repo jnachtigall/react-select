@@ -109,7 +109,8 @@ var menuRenderer = function menuRenderer(_ref) {
 	    removeValue = _ref.removeValue,
 	    selectValue = _ref.selectValue,
 	    valueArray = _ref.valueArray,
-	    valueKey = _ref.valueKey;
+	    valueKey = _ref.valueKey,
+	    optionAriaLabel = _ref.optionAriaLabel;
 
 	var Option = optionComponent;
 
@@ -144,7 +145,8 @@ var menuRenderer = function menuRenderer(_ref) {
 					onOptionRef(_ref2, isFocused);
 				},
 				removeValue: removeValue,
-				selectValue: selectValue
+				selectValue: selectValue,
+				optionAriaLabel: optionAriaLabel
 			},
 			optionRenderer(option, i, inputValue)
 		);
@@ -481,7 +483,8 @@ var Option = function (_React$Component) {
 			var _props = this.props,
 			    option = _props.option,
 			    instancePrefix = _props.instancePrefix,
-			    optionIndex = _props.optionIndex;
+			    optionIndex = _props.optionIndex,
+			    optionAriaLabel = _props.optionAriaLabel;
 
 			var className = classNames(this.props.className, option.className);
 
@@ -496,7 +499,7 @@ var Option = function (_React$Component) {
 				{ className: className,
 					style: option.style,
 					role: 'option',
-					'aria-label': option.label,
+					'aria-label': optionAriaLabel.replace('{label}', option.label),
 					onMouseDown: this.handleMouseDown,
 					onMouseEnter: this.handleMouseEnter,
 					onMouseMove: this.handleMouseMove,
@@ -523,7 +526,8 @@ Option.propTypes = {
 	onSelect: PropTypes.func, // method to handle click on option element
 	onUnfocus: PropTypes.func, // method to handle mouseLeave on option element
 	option: PropTypes.object.isRequired, // object that is base for that option
-	optionIndex: PropTypes.number // index of the option, used to generate unique ids for aria
+	optionIndex: PropTypes.number, // index of the option, used to generate unique ids for aria
+	optionAriaLabel: PropTypes.string
 };
 
 var Value = function (_React$Component) {
@@ -1733,7 +1737,8 @@ var Select$1 = function (_React$Component) {
 					removeValue: this.removeValue,
 					selectValue: this.selectValue,
 					valueArray: valueArray,
-					valueKey: this.props.valueKey
+					valueKey: this.props.valueKey,
+					optionAriaLabel: this.props.optionAriaLabel
 				});
 			} else if (this.props.noResultsText) {
 				return React__default.createElement(
@@ -1995,7 +2000,8 @@ Select$1.propTypes = {
 	valueRenderer: PropTypes.func, // valueRenderer: function (option) {}
 	wrapperStyle: PropTypes.object, // optional style to apply to the component wrapper
 	valueCloseAriaLabel: PropTypes.string, // Aria label for close value - used for aria
-	valueAriaLabel: PropTypes.string // Aria label for value - used for aria
+	valueAriaLabel: PropTypes.string, // Aria label for value - used for aria
+	optionAriaLabel: PropTypes.string
 };
 
 Select$1.defaultProps = {
@@ -2043,7 +2049,8 @@ Select$1.defaultProps = {
 	valueComponent: Value,
 	valueKey: 'value',
 	valueCloseAriaLabel: 'Close',
-	valueAriaLabel: 'Used filter: '
+	valueAriaLabel: 'Used filter: ',
+	optionAriaLabel: 'Search for {label}'
 };
 
 var propTypes = {
